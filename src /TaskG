@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class TaskG {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Считываем число фишек k
+        int k = scanner.nextInt();
+
+        // Проверяем: либо 1 фишка (для доски 1x1), либо число кратно 4 (для досок 2x2 и больше)
+        if (k == 1 || (k > 0 && k % 4 == 0)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
