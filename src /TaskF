@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class TaskF {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Считываем размеры шоколадки (n, m) и количество долек (k)
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int k = scanner.nextInt();
+
+        // Проверяем условия для отлома куска одним разрезом
+        if ((k % m == 0 && k / m < n) || (k % n == 0 && k / n < m)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
