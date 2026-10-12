@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class TaskI {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+        int d = scanner.nextInt();
+
+        if (a == 0) {
+            if (b == 0) {
+                // Числитель всегда 0. Если знаменатель тоже может быть 0 в какой-то точке, 
+                // то в ней неопределенность, но в остальных бесконечных точках дробь равна 0.
+                System.out.println("INF");
+            } else {
+                // Числитель никогда не 0
+                System.out.println("NO");
+            }
+        } else {
+            // Проверяем, делится ли -b на a нацело
+            if (-b % a == 0) {
+                int x = -b / a;
+                // Проверяем, не обращает ли этот корень знаменатель в ноль
+                if (c * x + d != 0) {
+                    System.out.println(x);
+                } else {
+                    System.out.println("NO");
+                }
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
+}
